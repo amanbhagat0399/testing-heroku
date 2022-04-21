@@ -1,107 +1,196 @@
-{% extends 'main.html' %}
-{% block content %}
-{% if message %}
-        <div class="alert alert-danger">{{ message }}</div>
-    {% endif %}
+{% extends 'main.html' %} {% block content %} {% if message %}
+<div class="alert alert-danger">{{ message }}</div>
+{% endif %}
 <div class="container">
-    <div class="card card-body" style="border: 1px solid black; box-shadow: 0 0 10px black;">
-        <h2>This is basic Machine Learning and Deep Learning based WebApp.</h2>
-        <p>These Machine Learning models and Deep Leaning models are trained on large datasets and thousands of images.</p>
-        <br>
-        <h2>Model Accuracies:</h2>
-        <ul>
-            <li>Diabetes Model: <strong>98.25%</strong></li>
-            <li>Breast Cancer Model: <strong>98.25%</strong></li>
-            <li>Heart Disease Model: <strong>85.25%</strong></li>
-            <li>Kidney Disease Model: <strong>99%</strong></li>
-            <li>Liver Disease Model: <strong>78%</strong></li>
-        </ul>
-        <br>
-        <h3>Information about the Diseases which this webApp can predict.</h3>
-        <br>
-        <div class="row">
-            <div class="col-md-12 card card-body" style="box-shadow: 0 0 5px black; margin: 5px;">
-                <h4>Diabetes</h4>
-                <p>Diabetes is a disease that occurs when your blood glucose, also called blood sugar, is too high. Blood glucose is your main source of energy and comes from the food you eat. Insulin, a hormone made by the pancreas, helps glucose from food get into your cells to be used for energy. Sometimes your body doesn’t make enough—or any—insulin or doesn’t use insulin well. Glucose then stays in your blood and doesn’t reach your cells.</p>
-                <h5>Symptoms</h5>
-                <ul>
-                    <li>Urinating often.</li>
-                    <li>Feeling very thirsty.</li>
-                    <li>Extreme fatigue.</li>
-                    <li>Blurry vision.</li>
-                </ul>
-            </div>
-        </div>
-        <br>
-        <div class="row">
-            <div class="col-md-12 card card-body" style="box-shadow: 0 0 5px black; margin: 5px;">
-                <h4>Breast Cancer</h4>
-                <p>Breast cancer is cancer that forms in the cells of the breasts.
+  <div
+    class="card card-body"
+    style="
+      border: 1px solid black;
+      box-shadow: 0 0 10px black;
+      background-image: url('Heart-disease-home-page.jpg');
+    "
+  >
+    <h1 style="text-align: center">CO-LAB : A Virtual Assistant</h1>
+    <br />
 
-                    After skin cancer, breast cancer is the most common cancer diagnosed in women in the United States. Breast cancer can occur in both men and women, but it's far more common in women.</p>
-                <h5>Symptoms</h5>
-                <ul>
-                    <li>A breast lump or thickening that feels different from the surrounding tissue</li>
-                    <li>Change in the size, shape or appearance of a breast</li>
-                    <li>Changes to the skin over the breast, such as dimpling</li>
-                    <li>Redness or pitting of the skin over your breast, like the skin of an orange</li>
-                </ul>
-            </div>
+    <div class="row" style="margin: 5px">
+      <div
+        class="col-md-12 card card-body"
+        style="
+          box-shadow: 0 0 5px black;
+          margin: 5px;
+          background: linear-gradient(to right, #81b5d4a6, #9198e5);
+        "
+      >
+        <div style="display: flex">
+          <div
+            type="button"
+            data-toggle="collapse"
+            data-target="#diabetes_collapse"
+            aria-expanded="false"
+            aria-controls="collapseExample"
+            style="width: 90%"
+          >
+            <h1>Diabetes</h1>
+          </div>
+          <!-- <i
+            class="fa fa-plus"
+            aria-hidden="true"
+            style="float: right; width: 10%; text-align: center; padding: 10px;"
+          ></i> -->
         </div>
+        <div class="collapse" id="diabetes_collapse">
+          <div class="card card-body">
+            Diabetes is a disease that occurs when your blood glucose, also
+            called blood sugar, is too high. Blood glucose is your main source
+            of energy and comes from the food you eat. Insulin, a hormone made
+            by the pancreas, helps glucose from food get into your cells to be
+            used for energy. Sometimes your body doesn’t make enough—or
+            any—insulin or doesn’t use insulin well. Glucose then stays in your
+            blood and doesn’t reach your cells.
 
-        <br>
-        <div class="row">
-            <div class="col-md-12 card card-body" style="box-shadow: 0 0 5px black; margin: 5px;">
-                <h4>Chronic kidney disease</h4>
-                <p>Chronic kidney disease, also called chronic kidney failure, describes the gradual loss of kidney function. Your kidneys filter wastes and excess fluids from your blood, which are then excreted in your urine. When chronic kidney disease reaches an advanced stage, dangerous levels of fluid, electrolytes and wastes can build up in your body.</p>
-                <h5>Symptoms</h5>
-                <ul>
-                    <li>Nausea</li>
-                    <li>Vomiting</li>
-                    <li>Fatigue and weakness</li>
-                    <li>Muscle twitches and cramps</li>
-                </ul>
-            </div>
+            <h5>Symptoms</h5>
+            <ul>
+              <li>Urinating often.</li>
+              <li>Feeling very thirsty.</li>
+              <li>Extreme fatigue.</li>
+              <li>Blurry vision.</li>
+            </ul>
+            <button
+              style="
+                border: none;
+                height: 50px;
+                position: absolute;
+                bottom: 8px;
+                right: 16px;
+                width: 20%;
+                background: linear-gradient(to right, #81b5d4a6, #9198e5);
+              "
+            >
+              <a style="color: white" href="{{ url_for('diabetesPage') }}"
+                >Predict</a
+              >
+            </button>
+          </div>
         </div>
-
-        <br>
-        <div class="row">
-            <div class="col-md-12 card card-body" style="box-shadow: 0 0 5px black; margin: 5px;">
-                <h4>Liver disease</h4>
-                <p>Symptoms of liver disease can vary, but they often include swelling of the abdomen and legs, bruising easily, changes in the color of your stool and urine, and jaundice, or yellowing of the skin and eyes. Sometimes there are no symptoms. Tests such as imaging tests and liver function tests can check for liver damage and help to diagnose liver diseases.</p>
-            </div>
-        </div>
-
-        <br>
-        <div class="row">
-            <div class="col-md-12 card card-body" style="box-shadow: 0 0 5px black; margin: 5px;">
-                <h4>Malaria</h4>
-                <p>Malaria is a mosquito-borne infectious disease that affects humans and other animals. Malaria causes symptoms that typically include fever, tiredness, vomiting, and headaches. In severe cases it can cause yellow skin, seizures, coma, or death. Symptoms usually begin ten to fifteen days after being bitten by an infected mosquito. If not properly treated, people may have recurrences of the disease months later.</p>
-                <h5>Symptoms</h5>
-                <ul>
-                    <li>Fever. This is the most common symptom.</li>
-                    <li>Chills</li>
-                    <li>Headache</li>
-                    <li>Nausea and vomiting</li>
-                </ul>
-            </div>
-        </div>
-
-        <br>
-        <div class="row">
-            <div class="col-md-12 card card-body" style="box-shadow: 0 0 5px black; margin: 5px;">
-                <h4>Pneumonia</h4>
-                <p>Pneumonia is an infection that inflames the air sacs in one or both lungs. The air sacs may fill with fluid or pus (purulent material), causing cough with phlegm or pus, fever, chills, and difficulty breathing. A variety of organisms, including bacteria, viruses and fungi, can cause pneumonia.</p>
-                <h5>Symptoms</h5>
-                <ul>
-                    <li>Cough, which may produce greenish, yellow or even bloody mucus.</li>
-                    <li>Fever, sweating and shaking chills.</li>
-                    <li>Shortness of breath.</li>
-                    <li>Rapid, shallow breathing.</li>
-                </ul>
-            </div>
-        </div>
-
+      </div>
     </div>
+
+    <div class="row" style="margin: 5px">
+      <div
+        class="col-md-12 card card-body"
+        style="
+          box-shadow: 0 0 5px black;
+          margin: 5px;
+          background: linear-gradient(to right, #e66465, #9198e5);
+        "
+      >
+        <div
+          data-toggle="collapse"
+          data-target="#breast_cancer_collapse"
+          aria-expanded="false"
+          aria-controls="collapseExample"
+        >
+          <h1>Breast Cancer</h1>
+        </div>
+        <div class="collapse" id="breast_cancer_collapse">
+          <div class="card card-body">
+            Breast cancer is cancer that forms in the cells of the breasts.
+            After skin cancer, breast cancer is the most common cancer diagnosed
+            in women in the United States. Breast cancer can occur in both men
+            and women, but it's far more common in women.
+            <h5>Symptoms</h5>
+            <ul>
+              <li>
+                A breast lump or thickening that feels different from the
+                surrounding tissue
+              </li>
+              <li>Change in the size, shape or appearance of a breast</li>
+              <li>Changes to the skin over the breast, such as dimpling</li>
+              <li>
+                Redness or pitting of the skin over your breast, like the skin
+                of an orange
+              </li>
+            </ul>
+            <button
+              style="
+                border: none;
+                height: 50px;
+                position: absolute;
+                bottom: 8px;
+                right: 16px;
+                width: 20%;
+                background: linear-gradient(to right, #e66465, #9198e5);
+              "
+            >
+              <a style="color: white" href="{{ url_for('cancerPage') }}"
+                >Predict</a
+              >
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row" style="margin: 5px">
+      <div
+        class="col-md-12 card card-body"
+        style="
+          box-shadow: 0 0 5px black;
+          margin: 5px;
+          background: linear-gradient(to right, #ff0000, #9198e5);
+        "
+      >
+        <div
+          data-toggle="collapse"
+          data-target="#heart_disease_collapse"
+          aria-expanded="false"
+          aria-controls="collapseExample"
+        >
+          <h1>Heart Disease</h1>
+        </div>
+        <div class="collapse" id="heart_disease_collapse">
+          <div class="card card-body">
+            A buildup of fatty plaques in your arteries, or atherosclerosis
+            (ath-ur-o-skluh-ROE-sis) can damage your blood vessels and heart.
+            Plaque buildup causes narrowed or blocked blood vessels that can
+            lead to a heart attack, chest pain (angina) or stroke. Coronary
+            artery disease symptoms may be different for men and women. For
+            instance, men are more likely to have chest pain. Women are more
+            likely to have other signs and symptoms along with chest discomfort,
+            such as shortness of breath, nausea and extreme fatigue.
+            <h5>Symptoms</h5>
+            <ul>
+              <li>Chest pain</li>
+              <li>Chest tightness</li>
+              <li>Chest pressure</li>
+              <li>Chest discomfort (angina)</li>
+              <li>Shortness of breath</li>
+              <li>
+                Pain, numbness, weakness or coldness in your legs or arms if the
+                blood vessels in those parts of your body are narrowed
+              </li>
+              <li>Pain in the neck, jaw, throat, upper abdomen or back</li>
+            </ul>
+            <button
+              style="
+                border: none;
+                height: 50px;
+                position: absolute;
+                bottom: 8px;
+                right: 16px;
+                width: 20%;
+                background: linear-gradient(to right, #ff0000, #9198e5);
+              "
+            >
+              <a style="color: white" href="{{ url_for('heartPage') }}"
+                >Predict</a
+              >
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    {% endblock %}
+  </div>
 </div>
-{% endblock %}

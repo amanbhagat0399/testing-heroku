@@ -18,26 +18,31 @@
   
   <style>
     html, body{ height:100%; margin:0; }
-header{ height:50px;}
+header{ height:20px;}
 footer{ height:75px; background:black; }
 
 /* Trick */
-body{ 
+/* body{ 
   display:flex; 
   flex-direction:column; 
-}
+} */
 
 footer{
   padding:10px;
   margin-top:auto;
-  margin-bottom: auto; 
+  /* position: fixed; */
+  height: 70px;
+  bottom: 0%;
+  left: 0%;
+  right: 0%;
+  margin-bottom: 0%;
 }
   </style>
 
 </head>
 <body>
 	<nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-dark" style="background-color: black !important;">
-        <a href="{{ url_for('home') }}"><img src="{{ url_for('static', filename = 'logo.png') }} " height="60px" width="275px"></a>
+        <a href="{{ url_for('home') }}"><img src="{{ url_for('static', filename = 'colab-2.png') }} " height="70px" width="150px"></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
            <span class="navbar-toggler-icon"></span>
          </button>
@@ -55,12 +60,12 @@ footer{
              <li class="nav-item active">
                 <a class="nav-link" href="{{ url_for('heartPage') }}">Heart</a>
              </li>
-             <li class="nav-item active">
+             <!-- <li class="nav-item active">
                 <a class="nav-link" href="{{ url_for('kidneyPage') }}">Kidney</a>
               </li>
               <li class="nav-item active">
                 <a class="nav-link" href="{{ url_for('liverPage') }}">Liver</a>
-              </li>
+              </li> -->
            </ul>
          </div>
        </nav>
